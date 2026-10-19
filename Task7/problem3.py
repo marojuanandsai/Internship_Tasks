@@ -1,6 +1,13 @@
-k = int(input())
-rooms = list(map(int, input().split()))
+def marsExploration(s):
+    count = 0
+    expected = "SOS"
 
-captain = (sum(set(rooms)) * k - sum(rooms)) // (k - 1)
+    for i in range(len(s)):
+        if s[i] != expected[i % 3]:
+            count += 1
 
-print(captain)
+    return count
+
+
+s = input()
+print(marsExploration(s))
